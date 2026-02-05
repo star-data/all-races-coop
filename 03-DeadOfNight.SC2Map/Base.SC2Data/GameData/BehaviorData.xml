@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CBehaviorBuff id="SensorTowerRadar">
+        <Modification Radar="40"/>
+    </CBehaviorBuff>
+</Catalog>

@@ -1,0 +1,506 @@
+<Catalog>
+
+    <CSound id="Event_2D_Train_Depart_Horn_PartParcel" parent="Other">
+        <AssetArray File="Assets\Sounds\Train_Departing_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Departing_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Departing_03.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <SpeakerMix index="Center" value="0.25"/>
+        <SpeakerMix index="BackLeft" value="0.5"/>
+        <SpeakerMix index="BackRight" value="0.5"/>
+        <SpeakerMix index="SideLeft" value="0.125"/>
+        <SpeakerMix index="SideRight" value="0.125"/>
+        <Volume value="-10.000000,-10.000000"/>
+    </CSound>
+    <CSound id="Event_2D_Train_Depart_PullsOut_PartParcel" parent="Other">
+        <AssetArray File="Assets\Sounds\Train_Pulls_Out_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Pulls_Out_02.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <SpeakerMix index="Center" value="0"/>
+        <SpeakerMix index="BackLeft" value="0.125"/>
+        <SpeakerMix index="BackRight" value="0.125"/>
+        <SpeakerMix index="SideLeft" value="0.125"/>
+        <SpeakerMix index="SideRight" value="0.125"/>
+        <Volume value="-8.000000,-8.000000"/>
+    </CSound>
+    <CSound id="AC_Stinger_2D_TrainEscapes_PartParcel" parent="Ambience_Map">
+        <AssetArray File="Assets\Sounds\AC_Stinger_EsoEthereal.wav" FacialGroup=""/>
+        <LoopCount value="0"/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-10.000000,-10.000000"/>
+        <Flags index="Download" value="1"/>
+        <Flags index="VariationFallback" value="0"/>
+    </CSound>
+    <CSound id="Event_2D_Train_Depart_PullsOut" parent="Other">
+        <AssetArray File="Assets\Sounds\Train_Pulls_Out_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Pulls_Out_02.wav" FacialGroup=""/>
+        <Pitch value="-2.000000,0.000000"/>
+        <SpeakerMix index="Center" value="0"/>
+        <SpeakerMix index="BackLeft" value="0.125"/>
+        <SpeakerMix index="BackRight" value="0.125"/>
+        <SpeakerMix index="SideLeft" value="0.125"/>
+        <SpeakerMix index="SideRight" value="0.125"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="Event_2D_Train_Depart_Horn" parent="Other">
+        <AssetArray File="Assets\Sounds\Train_Departing_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Departing_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Train_Departing_03.wav" FacialGroup=""/>
+        <SpeakerMix index="Center" value="0.25"/>
+        <SpeakerMix index="BackLeft" value="0.5"/>
+        <SpeakerMix index="BackRight" value="0.5"/>
+        <SpeakerMix index="SideLeft" value="0.125"/>
+        <SpeakerMix index="SideRight" value="0.125"/>
+        <Volume value="-14.000000,-14.000000"/>
+        <Pitch value="-2.000000,0.000000"/>
+    </CSound>
+
+
+
+    <CUnit id="TarsonisEngine">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <LifeStart value="50000"/>
+        <LifeMax value="50000"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="19.6875"/>
+        <TurningRate value="19.6875"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <Radius value="0.8125"/>
+        <SeparationRadius value="0.8"/>
+        <InnerRadius value="0.75"/>
+        <ScoreMake value="350"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Sight value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="ConjoinedTrainCar"/>
+        <BehaviorArray Link="ImmuneToSnare"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Height value="1"/>
+        <Mover value="Fly"/>
+        <DeathTime value="1"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <FlagArray index="Unstoppable" value="1"/>
+        <ScoreMake value="0"/>
+        <ScoreKill value="0"/>
+        <BehaviorArray Link="TimeStopImmune"/>
+        <BehaviorArray Link="Unrepairable"/>
+        <BehaviorArray Link="NoBiomassDrop"/>
+        <BehaviorArray Link="PreventKnockback"/>
+        <DamageDealtXP value="0"/>
+        <DamageTakenXP value="0"/>
+        <Food value="-8"/>
+        <Attributes index="MapBoss" value="1"/>
+    </CUnit>
+    <CUnit id="TarsonisEngineFast">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <LifeStart value="50000"/>
+        <LifeMax value="50000"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="29.707"/>
+        <TurningRate value="29.707"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <Radius value="0.8125"/>
+        <SeparationRadius value="0.8"/>
+        <InnerRadius value="0.75"/>
+        <ScoreMake value="350"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Sight value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="ConjoinedTrainCar"/>
+        <BehaviorArray Link="ImmuneToSnare"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <Height value="1"/>
+        <Mover value="Fly"/>
+        <DeathTime value="1"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <FlagArray index="Unstoppable" value="1"/>
+        <DamageDealtXP value="0"/>
+        <DamageTakenXP value="0"/>
+        <BehaviorArray Link="TimeStopImmune"/>
+        <BehaviorArray Link="Unrepairable"/>
+        <BehaviorArray Link="NoBiomassDrop"/>
+        <BehaviorArray Link="PreventKnockback"/>
+        <ScoreMake value="0"/>
+        <ScoreKill value="0"/>
+        <Food value="-8"/>
+        <Attributes index="MapBoss" value="1"/>
+    </CUnit>
+    <CUnit id="FreightCar">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <LifeStart value="50000"/>
+        <LifeMax value="50000"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="19.6875"/>
+        <TurningRate value="19.6875"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <Radius value="0.8125"/>
+        <SeparationRadius value="0.8"/>
+        <InnerRadius value="0.75"/>
+        <ScoreMake value="350"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Sight value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="ImmuneToSnare"/>
+        <BehaviorArray Link="ConjoinedTrainCar"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <Height value="1"/>
+        <Mover value="Fly"/>
+        <DeathTime value="1"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <FlagArray index="Unstoppable" value="1"/>
+        <ScoreMake value="0"/>
+        <ScoreKill value="0"/>
+        <BehaviorArray Link="TimeStopImmune"/>
+        <BehaviorArray Link="Unrepairable"/>
+        <BehaviorArray Link="NoBiomassDrop"/>
+        <BehaviorArray Link="PreventKnockback"/>
+        <DamageDealtXP value="0"/>
+        <DamageTakenXP value="0"/>
+        <Food value="-8"/>
+        <Attributes index="MapBoss" value="1"/>
+    </CUnit>
+    <CUnit id="Caboose">
+        <DeathRevealRadius value="3"/>
+        <Race value="Terr"/>
+        <LifeStart value="50000"/>
+        <LifeMax value="50000"/>
+        <LifeArmor value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Speed value="2"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="19.6875"/>
+        <TurningRate value="19.6875"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <Radius value="0.8125"/>
+        <SeparationRadius value="0.8"/>
+        <InnerRadius value="0.75"/>
+        <ScoreMake value="350"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.4"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Sight value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="attack"/>
+        <BehaviorArray Link="ConjoinedTrainCar"/>
+        <BehaviorArray Link="ImmuneToSnare"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <Height value="1"/>
+        <Mover value="Fly"/>
+        <DeathTime value="1"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <FlagArray index="Unstoppable" value="1"/>
+        <DamageDealtXP value="0"/>
+        <DamageTakenXP value="0"/>
+        <BehaviorArray Link="TimeStopImmune"/>
+        <BehaviorArray Link="Unrepairable"/>
+        <BehaviorArray Link="NoBiomassDrop"/>
+        <BehaviorArray Link="PreventKnockback"/>
+        <ScoreMake value="0"/>
+        <ScoreKill value="0"/>
+        <Food value="-8"/>
+        <Attributes index="MapBoss" value="1"/>
+    </CUnit>
+
+
+    <CModel id="TarsonisEngine" parent="Unit">
+        <Model value="Assets\Units\Terran\DominionTrainEngine\DominionTrainEngine.m3"/>
+        <Occlusion value="Show"/>
+        <SelectionRadius value="2.333"/>
+        <Tipability value="0.1"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Flags index="AutoUnload" value="1"/>
+        <ShadowRadius value="2.333"/>
+    </CModel>
+    <CModel id="TarsonisEngineFast" parent="Unit">
+        <Model value="Assets\Units\Terran\DominionTrainEngineFast\DominionTrainEngineFast.m3"/>
+        <Occlusion value="Show"/>
+        <SelectionRadius value="2.333"/>
+        <Tipability value="0.1"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Flags index="AutoUnload" value="1"/>
+        <ShadowRadius value="2.333"/>
+    </CModel>
+    <CModel id="TarsonisEngineDeath" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\DominionTrainEngineDeath\DominionTrainEngineDeath.m3"/>
+        <Occlusion value="Show"/>
+        <Radius value="1.75"/>
+        <LowQualityModel value="TarsonisEngineDeathLow"/>
+    </CModel>
+    <CModel id="TarsonisEngineDeathLow" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\DominionTrainEngineDeath\DominionTrainEngineDeath_Low.m3"/>
+        <Occlusion value="Show"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="DominionTrainEngineFastDeath" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\DominionTrainEngineFastDeath\DominionTrainEngineFastDeath.m3"/>
+        <Occlusion value="Show"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+        <LowQualityModel value="DominionTrainEngineFastDeathLow"/>
+        <Events Anim="Death,00" Name="Train_EngineFast_Death" Type="Sound" Time="0.012" Payload="Train_EngineFast_Death"/>
+        <Events Anim="Death,00" Name="General_Explosion_Debris" Type="Sound" Time="1.302" Payload="General_Explosion_Debris"/>
+    </CModel>
+    <CModel id="DominionTrainEngineFastDeathLow" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\DominionTrainEngineFastDeath\DominionTrainEngineFastDeath_Low.m3"/>
+        <Occlusion value="Show"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+        <ShadowRadius value="1.75"/>
+    </CModel>
+    <CModel id="FreightCar" parent="Unit" Race="Terran">
+        <Model value="Assets\Units\Terran\DominionTrainFreightCar\DominionTrainFreightCar.m3"/>
+        <Occlusion value="Show"/>
+        <SelectionRadius value="2.333"/>
+        <Tipability value="0.1"/>
+        <Radius value="1.75"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Flags index="AutoUnload" value="1"/>
+        <ShadowRadius value="2.333"/>
+    </CModel>
+    <CModel id="DominionTrainFreightCarDeath" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\DominionTrainFreightCarDeath\DominionTrainFreightCarDeath.m3"/>
+        <Occlusion value="Show"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+        <ShadowRadius value="1.75"/>
+        <Events Anim="Death,00" Name="TerranPreExplosionSmall" Type="Sound" Time="0.1666"/>
+        <Events Anim="Death,00" Name="TerranExplosionLarge" Type="Sound" Time="1.3666"/>
+        <Events Anim="Death,01" Name="TerranPreExplosionSmall" Type="Sound" Time="0.1"/>
+        <Events Anim="Death,01" Name="TerranExplosionLarge" Type="Sound" Time="1.5"/>
+        <Events Anim="Death,02" Name="TerranPreExplosionSmall" Type="Sound" Time="0.1333"/>
+        <Events Anim="Death,02" Name="TerranExplosionLarge" Type="Sound" Time="1.1666"/>
+        <Events Anim="Death,00" Name="Train_FreightCar_Death" Type="Sound" Time="0.01" Payload="Train_FreightCar_Death"/>
+        <Events Anim="Death,00" Name="General_Explosion_Fire" Type="Sound" Time="1.582" Payload="General_Explosion_Fire"/>
+        <Events Anim="Death,01" Name="General_Explosion_Fire" Type="Sound" Time="1.44" Payload="General_Explosion_Fire"/>
+        <Events Anim="Death,01" Name="Train_FreightCar_Death_01" Type="Sound" Time="0.011" Payload="Train_FreightCar_Death_01"/>
+        <Events Anim="Death,02" Name="General_Explosion_Fire" Type="Sound" Time="1.122" Payload="General_Explosion_Fire"/>
+        <Events Anim="Death,02" Name="Train_FreightCar_Death_02" Type="Sound" Time="0.022" Payload="Train_FreightCar_Death_02"/>
+        <LowQualityModel value="DominionTrainFreightCarDeathLow"/>
+    </CModel>
+    <CModel id="DominionTrainFreightCarDeathLow" parent="UnitDeath">
+        <Model value="Assets\Units\Terran\DominionTrainFreightCarDeath\DominionTrainFreightCarDeath_Low.m3"/>
+        <Occlusion value="Show"/>
+        <Radius value="1.75"/>
+        <EditorCategories value="Race:Terran"/>
+        <Events Anim="Death,00" Name="TerranPreExplosionSmall" Type="Sound" Time="0.1666"/>
+        <Events Anim="Death,00" Name="TerranExplosionLarge" Type="Sound" Time="1.3666"/>
+        <Events Anim="Death,01" Name="TerranPreExplosionSmall" Type="Sound" Time="0.1"/>
+        <Events Anim="Death,01" Name="TerranExplosionLarge" Type="Sound" Time="1.5"/>
+        <Events Anim="Death,02" Name="TerranPreExplosionSmall" Type="Sound" Time="0.1333"/>
+        <Events Anim="Death,02" Name="TerranExplosionLarge" Type="Sound" Time="1.1666"/>
+    </CModel>
+    <CModel id="Caboose" parent="Unit" Race="Terran">
+        <Model value="Assets\Units\Terran\DominionTrainFreightCar\DominionTrainFreightCar.m3"/>
+        <Occlusion value="Show"/>
+        <SelectionRadius value="2.333"/>
+        <Tipability value="0.1"/>
+        <Radius value="1.75"/>
+        <ScaleMax value="0.750000,0.750000,0.750000"/>
+        <ScaleMin value="0.750000,0.750000,0.750000"/>
+        <Flags index="AutoUnload" value="1"/>
+        <ShadowRadius value="2.333"/>
+    </CModel>
+    <CActorUnit id="Caboose" parent="GenericUnitStandardNoAutoSoundLinks" unitName="Caboose">
+        <DeathArray index="Normal" ModelLink="DominionTrainFreightCarDeath" SoundLink=""/>
+        <DeathActorModelLow value="UnitDeathModel"/>
+        <StandAnimTurnTime value="3.33"/>
+        <WalkAnimMoveSpeed value="1"/>
+        <BarWidth value="204"/>
+        <BarOffset value="160"/>
+        <NameOffset value="100"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
+        <UnitIcon value="Assets\Textures\Wireframe-terran-dominiontrainfreightcar.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainfreightcar.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainfreightcar.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="FreightCar" parent="GenericUnitStandardNoAutoSoundLinks" unitName="FreightCar">
+        <DeathArray index="Normal" ModelLink="DominionTrainFreightCarDeath" SoundLink=""/>
+        <DeathActorModelLow value="UnitDeathModel"/>
+        <StandAnimTurnTime value="3.33"/>
+        <WalkAnimMoveSpeed value="1"/>
+        <BarWidth value="204"/>
+        <BarOffset value="160"/>
+        <NameOffset value="80"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
+        <UnitIcon value="Assets\Textures\Wireframe-terran-dominiontrainfreightcar.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainfreightcar.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainfreightcar.dds"/>
+        </Wireframe>
+        <Aliases value="_UnitHuge"/>
+    </CActorUnit>
+    <CActorUnit id="TarsonisEngine" parent="GenericUnitStandardNoAutoSoundLinks" unitName="TarsonisEngine">
+        <DeathArray index="Normal" ModelLink="TarsonisEngineDeath" SoundLink=""/>
+        <DeathActorModelLow value="UnitDeathModel"/>
+        <StandAnimTurnTime value="3.33"/>
+        <WalkAnimMoveSpeed value="1"/>
+        <BarWidth value="204"/>
+        <BarOffset value="160"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Movement" value="TrainEngine_Movement"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
+        <UnitIcon value="Assets\Textures\BTN-Unit-Terran-DominionTrain.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainengine.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainengine.dds"/>
+        </Wireframe>
+        <Aliases value="_UnitHuge"/>
+    </CActorUnit>
+    <CActorUnit id="TarsonisEngineFast" parent="GenericUnitStandardNoAutoSoundLinks" unitName="TarsonisEngineFast">
+        <DeathArray index="Normal" ModelLink="DominionTrainEngineFastDeath" SoundLink=""/>
+        <DeathActorModelLow value="UnitDeathModel"/>
+        <StandAnimTurnTime value="3.33"/>
+        <WalkAnimMoveSpeed value="1"/>
+        <BarWidth value="204"/>
+        <BarOffset value="160"/>
+        <NameOffset value="60"/>
+        <SoundArray index="Movement" value="TrainEngine_Movement"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds"/>
+        <UnitIcon value="Assets\Textures\BTN-Unit-Terran-DominionTrain-Fast.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainenginefast.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-terran-dominiontrainenginefast.dds"/>
+        </Wireframe>
+        <Aliases value="_UnitHuge"/>
+    </CActorUnit>
+    <CActorSiteOpLocalOffset id="TrainTurboSiteOpLocalOffset">
+        <LocalOffset value="0.000000,-1.700000,1.300000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorModel id="TrainTurbo">
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter TrainTurboSiteOpLocalOffset"/>
+        <On Terms="ActorCreation" Send="$Birth PlayForever"/>
+        <On Terms="Behavior.TrainTurbo.On" Send="Create"/>
+        <On Terms="Behavior.TrainTurbo.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="$Birth PlayForever"/>
+        <On Terms="Behavior.TrainTurbo.On" Send="Create"/>
+        <On Terms="Behavior.TrainTurbo.Off" Send="Destroy"/>
+    </CActorModel>
+</Catalog>

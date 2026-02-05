@@ -1,0 +1,179 @@
+<Catalog>
+
+    <CAbilEffectTarget id="ProtossWarpAwayImminent">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ProtossWarpAwayImminentCreatePersistent"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Range value="12"/>
+        <Arc value="360"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Air;Self,Neutral,Enemy,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <AutoCastRange value="12"/>
+        <AutoCastValidatorArray value="NoProtossWarpAwayTarget"/>
+        <AutoCastValidatorArray value="IsProtossFrigate"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ProtossWarpAway"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="ProtossWarpAwayImminent2">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ProtossWarpAwayTarget2ApplyBehavior"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Range value="12"/>
+        <AutoCastRange value="6"/>
+        <Arc value="360"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Air;Self,Neutral,Enemy,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <AutoCastValidatorArray value="NoProtossWarpAwayTarget2"/>
+        <AutoCastValidatorArray value="IsProtossFrigate"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ProtossWarpAway"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="ProtossWarpAway">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="ProtossWarpAwayCreatePersistent"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Range value="0.5"/>
+        <Arc value="360"/>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="Air;Self,Neutral,Enemy,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+        <AutoCastRange value="0.5"/>
+        <AutoCastValidatorArray value="ProtossWarpAwayTarget"/>
+        <AutoCastValidatorArray value="IsProtossFrigate"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ProtossWarpAway"/>
+    </CAbilEffectTarget>
+    <CAbilMorph id="ProtossFrigateUndock">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="ProtossFrigateUndock">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnorePlacement" value="0"/>
+        <InfoArray Unit="ProtossFrigate" index="0">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="5"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="5"/>
+            </SectionArray>
+            <SectionArray index="Collide">
+                <DurationArray index="Delay" value="5"/>
+            </SectionArray>
+            <SectionArray index="Facing">
+                <DurationArray index="Delay" value="5"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="5"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CActorBeamSimple id="ProtossWarpAwayBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Model value="ExpeditionGateTractorBeam"/>
+        <Macros value="GlobalLoopMacro"/>
+        <On Terms="Effect.ProtossWarpAwayTargetApplyBehavior.Start" Send="Create"/>
+        <On Terms="Effect.DeadShuttle.Start" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create ProtossWarpAwaySoundLoop"/>
+        <On Terms="ActorCreation" Send="Create ProtossFrigateWarpOutAnticipation"/>
+        <On Terms="ActorDestruction" Target="ProtossWarpAwaySoundLoop" Send="Destroy"/>
+        <On Terms="ActorDestruction" Target="ProtossFrigateWarpOutAnticipation" Send="Destroy"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter ProtossWarpAwayCasterOffset"/>
+        <HostLaunch Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpact Subject="_Unit" Scope="Caster" Actor="Find"/>
+    </CActorBeamSimple>
+    <CActorModel id="ProtossWarpAwayTarget" parent="ModelAnimationStyleContinuous">
+        <Model value="MonlythForceFieldStatueAura"/>
+        <On Terms="Behavior.ProtossWarpAwayTarget.On" Send="Create"/>
+        <On Terms="Behavior.ProtossWarpAwayTarget.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+    </CActorModel>
+    <CActorSiteOpLocalOffset id="ProtossWarpAwayCasterOffset">
+        <LocalOffset value="0.000000,0.000000,3.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorModel id="ProtossFrigateWarpOutAnticipation" parent="ModelAnimationStyleContinuous">
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Macros value="GlobalLoopMacro"/>
+        <On Terms="Behavior.ProtossWarpAwayTarget2.On" Send="Create"/>
+        <On Terms="Behavior.ProtossWarpAwayTarget2.Off" Send="Destroy"/>
+    </CActorModel>
+    <CActorSound id="ProtossWarpAwaySoundLoop" parent="SoundContinuous">
+        <Sound value="Spell_ProtossShuttleWarpBeam"/>
+    </CActorSound>
+    <CActorModel id="ProtossWarpAwayImpact" parent="ModelAnimationStyleOneShotNoOrphan">
+        <On Terms="Abil.ProtossWarpAway.TargetCastStart" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefClear ::Host"/>
+        <Host Subject="_Selectable"/>
+        <InheritType value="OneShot"/>
+    </CActorModel>
+    <CActorSound id="ProtossWarpAwayLaunchSound" parent="SoundOneShot">
+        <Sound value="Spell_ProtossShuttleWarp"/>
+        <On Terms="Effect.ProtossWarpAwayCreatePersistent.Start; At Caster" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="ProtossWarpAwayLaunchStartSound" parent="SoundOneShot">
+        <Sound value="Spell_ProtossShuttleWarpBeam_Start"/>
+        <On Terms="Behavior.ProtossWarpAwayTarget.On" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="ProtossFrigate" parent="GenericUnitStandard" unitName="ProtossFrigate">
+        <On Terms="ActorCreation" Send="Create SoundEmitter ProtossFrigate_Movement"/>
+        <On Terms="ActorCreation" Send="Create SoundEmitter ProtossFrigate_MovementRumble"/>
+        <PortraitModel value="CarrierPortrait"/>
+        <BuildModel value="WarpPrismWarpIn"/>
+        <DeathArray index="Normal"/>
+        <BarWidth value="78"/>
+        <BarOffset value="55"/>
+        <NameOffset value="60"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-frigate.dds"/>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-frigate.dds"/>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-Frigate-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Frigate-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-Frigate-Shield03.dds"/>
+        </WireframeShield>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-Frigate.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-Frigate.dds"/>
+        </Wireframe>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <HostSiteOps Ops="SOpBankerProtossFrigate"/>
+        <SoundArray index="Movement" value=""/>
+        <Aliases value="_UnitHuge"/>
+        <CustomUnitStatusFrame value="LotV_UnitStatus/UnitStatusProgressFrameTemplateHigh"/>
+    </CActorUnit>
+    <CActorUnit id="ProtossFrigateDocked" parent="GenericUnitStandard" unitName="ProtossFrigateDocked">
+        <Model value="ProtossFrigate"/>
+        <PortraitModel value="WarpPrismPortrait"/>
+        <BuildModel value="WarpPrismWarpIn"/>
+        <DeathArray index="Normal" ModelLink="WarpPrismDeath" SoundLink="WarpPrism_Explode"/>
+        <BarWidth value="78"/>
+        <BarOffset value="55"/>
+        <NameOffset value="60"/>
+        <UnitIcon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <HeroIcon value="Assets\Textures\btn-unit-protoss-warpprism.dds"/>
+        <WireframeShield>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00-Shield01.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00-Shield02.dds"/>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00-Shield03.dds"/>
+        </WireframeShield>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Protoss-WarpPrism00.dds"/>
+        </Wireframe>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <HostSiteOps Ops="SOpBankerProtossFrigate"/>
+    </CActorUnit>
+    <CActorSiteOpBankerUnit id="SOpBankerProtossFrigate" parent="SOpBankerUnit">
+        <RollMax value="30.000000"/>
+        <RollInActivationAngle value="20"/>
+        <RollInArc value="110.000000"/>
+        <RollOutDuration value="1.600000"/>
+    </CActorSiteOpBankerUnit>
+</Catalog>

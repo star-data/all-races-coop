@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Asset path="cutscenes\ui_fenixcastingpanel.sc2cutscene" Type="Cutscene"/>
+<Asset path="assets\textures\umojanlabzergdisplay_05.dds" Type="Image"/>
+<Asset path="cutscenes\ui_alarakcastingpanel.sc2cutscene" Type="Cutscene"/>
+<Asset path="assets\textures\ui_ingame_resourcesharing_frame_message_protoss.dds" Type="Image"/>
+<Asset path="cutscenes\ui_soamission.sc2cutscene" Type="Cutscene"/>
+<Asset path="assets\textures\void_pure_black_backgroundcolor_diff.lvl0" Type="Image"/>
+<Asset path="assets\textures\white.dds" Type="Image"/>
+<Asset path="assets\textures\blank.dds" Type="Image"/>
+<Asset path="cutscenes\ui_zergcastingpanel.sc2cutscene" Type="Cutscene"/>
+<Asset path="af_slice.dds" Type="Image"/>
+<Asset path="assets\textures\void_pure_black_backgroundcolor_diff.dds" Type="Image"/>
+<Asset path="assets\textures\white32.dds" Type="Image"/>
+<Asset path="assets\textures\protoss-border-button-game.dds" Type="Image"/>
+<Asset path="cutscenes\ui_stukovcastingpanel.sc2cutscene" Type="Cutscene"/>
+<Asset path="cutscenes\ui_dehakacastingpanel.sc2cutscene" Type="Cutscene"/>
+<Asset path="cutscenes\ui_screens_alliedcommander_foreground.sc2cutscene" Type="Cutscene"/>
+<Asset path="assets\factions\amonsarmadalogo.dds" Type="Image"/>
+<Asset path="cutscenes\ui_terrancastingpanel.sc2cutscene" Type="Cutscene"/>
+<Asset path="assets\textures\ui_ingame_effects_splash2.dds" Type="Image"/>
+<Asset path="cutscenes\ui_screens_campaignmode_background.sc2cutscene" Type="Cutscene"/>
+<Asset path="assets\textures\btn-tips-scrap.dds" Type="Image"/>
+<Asset path="assets\textures\ui_commanderportrait_random.dds" Type="Image"/>
+<Asset path="assets\textures\umojanlabzergdisplay_05.lvl0" Type="Image"/>
+<Asset path="assets\textures\sc2_ui_glues_icons_closebuttonhover.dds" Type="Image"/>
+<Asset path="50black.dds" Type="Image"/>
+<Abil id="attack"/>
+<Abil id="KraithCrashingCharge"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="PortraitActor"/>
+<Actor id="TriggerRegion"/>
+<Actor id="Aiur_Puddle"/>
+<Actor id="Fog_Hazy"/>
+<Actor id="WaterPuddle"/>
+<Actor id="ThunderLightning"/>
+<Actor id="RainEmitterLarge"/>
+<Actor id="RainEmitterMedium"/>
+<Behavior id="PermanentlyInvulnerable"/>
+<Behavior id="PermanentlyUncommandable"/>
+<Behavior id="MULETimedLife"/>
+<Behavior id="RawVespeneGeyserGas"/>
+<Behavior id="Detector11"/>
+<Behavior id="ResourceStun"/>
+<Behavior id="ProgressBar"/>
+<Behavior id="ProtossGenericWarpInOut"/>
+<Effect id="TimedLifeFate"/>
+<Effect id="CopyTargetSelectionAndControlGroups"/>
+<Effect id="GuardianShieldPersistent"/>
+<Effect id="PointDefenseDroneReleaseCreateUnit"/>
+<Effect id="SeekerMissileLaunchMissile"/>
+<Effect id="NeuralParasiteLaunchMissile"/>
+<Effect id="Yamato"/>
+<Effect id="PsiStormPersistent"/>
+<Effect id="PostMorphHeal"/>
+<Effect id="YoinkStartSwitch"/>
+<Effect id="FungalGrowthLaunchMissile"/>
+<Effect id="TemporalFieldCreatePersistent"/>
+<Effect id="CorsairMPDisruptionWebCreatePersistent"/>
+<Effect id="Damage"/>
+<Effect id="COOPTerrazineTankTimeoutDeath"/>
+<Map id="COOP_Placeholder"/>
+<Model id="StaticPortrait"/>
+<Model id="PingNuke"/>
+<Model id="PingAlert"/>
+<Model id="PingBoss"/>
+<Model id="PingObjective"/>
+<Model id="BeaconDetectPing"/>
+<Model id="BeaconClaimPing"/>
+<Model id="TalkIcon"/>
+<Model id="PingCircle"/>
+<Model id="PingDiamond"/>
+<Model id="PingTriangle"/>
+<Model id="TalkIconRing"/>
+<Model id="DisintegrationState"/>
+<Model id="ProtossGenericWarpInOut"/>
+<Model id="PingViewArea"/>
+<Objective id="AC_BelshirEscort_Primary02"/>
+<Objective id="AC_BelshirEscort_Primary01"/>
+<Objective id="AC_BelshirEscort_Bonus01"/>
+<Race id="Prot"/>
+<Sound id="UI_TerranHint" Variations="0"/>
+<Sound id="TUIWarning" Variations="0"/>
+<Sound id="UI_GenericError" Variations="0"/>
+<Sound id="Changeling_What"/>
+<Sound id="Changeling_Disguise"/>
+<Sound id="Medivac_Unload" Variations="0"/>
+<Sound id="UI_MissionComplete" Variations="3"/>
+<Sound id="UI_MissionFailed" Variations="2"/>
+<Sound id="Music_MuleParty"/>
+<Sound id="ChaosStudio"/>
+<Sound id="AC_CM_UI_Select"/>
+<Sound id="AC_CM_UI_DeSelect"/>
+<Sound id="MutatorRemoval"/>
+<Sound id="UI_BNet_ProgressionCounter_Loop1"/>
+<Sound id="UI_PingAdvanced_Danger"/>
+<Sound id="UI_Victory_All" Variations="0"/>
+<Sound id="PlaceholderSoundFile"/>
+<Sound id="Alert_UniObjectiveCompleted"/>
+<Sound id="UI_TerranMissionFailed" Variations="1"/>
+<Sound id="UI_TerranNewTechAvailable" Variations="0"/>
+<Sound id="UI_TerranNewUnitAvailable" Variations="0"/>
+<Sound id="UI_TerranPing"/>
+<Sound id="TUISecret" Variations="0"/>
+<Sound id="UI_LowHealthWarning_BreathLoop"/>
+<Sound id="UI_LowHealthWarning_HeartBeatLoop"/>
+<Sound id="UI_ZergWarning" Variations="0"/>
+<Sound id="UI_Void_Error_Back"/>
+<Sound id="ChristmasGiftEnemy"/>
+<Sound id="ChristmasGiftPing"/>
+<Sound id="ChristmasGiftAlly"/>
+<Soundtrack id="Music_ZergRedEnvelope"/>
+<Soundtrack id="Music_RedEnvelope_Intro"/>
+<Soundtrack id="Music_TerranRedEnvelope"/>
+<Soundtrack id="Music_ProtossRedEnvelope"/>
+<Soundtrack id="Music_ZergChristmas_Festive"/>
+<Soundtrack id="Music_TerrChristmas_Festive"/>
+<Soundtrack id="Music_ProtChristmas_Festive"/>
+<Soundtrack id="Music_ProtHalloween"/>
+<Soundtrack id="Music_TerrHalloween"/>
+<Soundtrack id="Music_ZergHalloween"/>
+<Soundtrack id="Music_Christmas_Intro"/>
+<Soundtrack id="Ambience_AC_BelShir"/>
+<Unit id="Colossus"/>
+<Unit id="SCV"/>
+<Unit id="Marine"/>
+<Unit id="Marauder"/>
+<Unit id="Raven"/>
+<Unit id="Zealot"/>
+<Unit id="Carrier"/>
+<Unit id="Observer"/>
+<Unit id="Probe"/>
+<Unit id="Interceptor"/>
+<Unit id="Drone"/>
+<Unit id="Zergling"/>
+<Unit id="Hydralisk"/>
+<Unit id="Ultralisk"/>
+<Unit id="Roach"/>
+<Unit id="BroodLord"/>
+<Unit id="BanelingBurrowed"/>
+<Unit id="HydraliskBurrowed"/>
+<Unit id="Overseer"/>
+<Unit id="UltraliskBurrowed"/>
+<Unit id="CreepTumorBurrowed"/>
+<Unit id="OverseerSiegeMode"/>
+<Unit id="WidowMineBurrowed"/>
+<Unit id="InvisibleTargetDummy"/>
+<Unit id="OracleStasisTrap"/>
+<Unit id="HERC"/>
+<Unit id="DummyUnit"/>
+<Unit id="TerranDropPod"/>
+<Unit id="Dummy"/>
+<Unit id="ScienceFacility"/>
+<Unit id="TerrazineNodeOff"/>
+<Unit id="TerrazineHarvester"/>
+<Unit id="COOPTerrazineTank"/>
+<Unit id="DummyArmored"/>
+<Unit id="DummyLight"/>
+<Unit id="DummyStructure"/>
+<Unit id="ZergDropPodCreep"/>
+<Unit id="ZergDropPod"/>
+<Unit id="Blocker4x4"/>
+<User id="Mutators"/>
+<User id="XMM_MutationDifficultyLevels"/>
+</Preload>

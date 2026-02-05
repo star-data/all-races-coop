@@ -1,0 +1,32 @@
+<Catalog>
+
+    <CUnit id="Blocker4x4" parent="PATHINGBLOCKER">
+        <Mob value="None"/>
+        <Footprint value="Footprint4x4PathingBlocker"/>
+        <PlacementFootprint value="Footprint4x4PathingBlocker"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CActorUnit id="Blocker4x4" parent="PathingBlocker" unitName="Blocker4x4"/>
+    <CUnit id="Blocker6x6" parent="PATHINGBLOCKER">
+        <Mob value="None"/>
+        <Footprint value="Footprint6x6PathingBlocker"/>
+        <PlacementFootprint value="Footprint6x6PathingBlocker"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="Blocker8x8" parent="PATHINGBLOCKER">
+        <Mob value="None"/>
+        <Footprint value="Footprint8x8PathingBlocker"/>
+        <PlacementFootprint value="Footprint8x8PathingBlocker"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CUnit id="Blocker16x16" parent="PATHINGBLOCKER">
+        <Mob value="None"/>
+        <Footprint value="Footprint16x16PathingBlocker"/>
+        <PlacementFootprint value="Footprint16x16PathingBlocker"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:Campaign"/>
+    </CUnit>
+    <CActorUnit id="Blocker6x6" parent="PathingBlocker" unitName="Blocker6x6"/>
+    <CActorUnit id="Blocker8x8" parent="PathingBlocker" unitName="Blocker8x8"/>
+    <CActorUnit id="Blocker16x16" parent="PathingBlocker" unitName="Blocker16x16"/>
+
+</Catalog>

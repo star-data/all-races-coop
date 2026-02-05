@@ -1884,7 +1884,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
     int lv_b;
     int lv_cl;
     int lv_lb;
-    string lv_bfsyrnedaayumrkq;
+    string lv_pwdtlwedwsteahho;
 
     // Automatic Variable Declarations
     int autoF4C1695A_ae;
@@ -1918,7 +1918,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
 
     // Variable Initialization
     lv_hasDangerAbilities = libCOMI_gf_UnitTypeisArmed(lp_player, lp_unit);
-    lv_bfsyrnedaayumrkq = ("Race:" + UserDataGetString("Rules", libCOMI_gv_mBRules[lp_player], "Category", 1));
+    lv_pwdtlwedwsteahho = ("Race:" + UserDataGetString("Rules", libCOMI_gv_mBRules[lp_player], "Category", 1));
 
     // Implementation
     if ((CatalogEntryIsValid(c_gameCatalogUnit, lp_unit) == false)) {
@@ -2010,7 +2010,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
         autoA8B3C407_i = 1;
         for ( ; autoA8B3C407_i <= CatalogEntryCount(c_gameCatalogAbil) ; autoA8B3C407_i += 1 ) {
             lv_aBILITY = CatalogEntryGet(autoA8B3C407_catalog, autoA8B3C407_i);
-            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogAbil, lv_aBILITY, "EditorCategories", lp_player), lv_bfsyrnedaayumrkq, c_stringNoCase) == -1)) {
+            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogAbil, lv_aBILITY, "EditorCategories", lp_player), lv_pwdtlwedwsteahho, c_stringNoCase) == -1)) {
                 continue;
             }
             else {
@@ -2087,7 +2087,7 @@ void libCOMI_gf_CacheUnit (int lp_player, string lp_unit, bool lp_scan) {
         auto5BFD1086_i = 1;
         for ( ; auto5BFD1086_i <= CatalogEntryCount(c_gameCatalogBehavior) ; auto5BFD1086_i += 1 ) {
             lv_bEHAVIOR = CatalogEntryGet(auto5BFD1086_catalog, auto5BFD1086_i);
-            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogBehavior, lv_bEHAVIOR, "EditorCategories", lp_player), lv_bfsyrnedaayumrkq, c_stringNoCase) == -1)) {
+            if ((PlayerRace(lp_player) != "Neut") && (StringFind(CatalogFieldValueGet(c_gameCatalogBehavior, lv_bEHAVIOR, "EditorCategories", lp_player), lv_pwdtlwedwsteahho, c_stringNoCase) == -1)) {
                 continue;
             }
             else {

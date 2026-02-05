@@ -1,0 +1,133 @@
+<Catalog>
+
+    <CRequirementCountUpgrade id="CountUpgradeCommanderLevelCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CommanderLevel" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeCommanderLevelQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="CommanderLevel"/>
+    </CRequirementCountUpgrade>
+    <CRequirementLTE id="LTE1CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="1"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE2CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="2"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE3CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="3"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE4CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="4"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE5CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="5"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE6CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="6"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE7CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="7"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE8CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="8"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE9CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="9"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE10CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="10"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE11CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="11"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE12CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="12"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE13CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="13"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE14CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="14"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTE15CountUpgradeCommanderLevelQueuedOnly">
+        <OperandArray index="0" value="15"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelQueuedOnly"/>
+    </CRequirementLTE>
+
+
+    <CRequirementGT id="GT1CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="1"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT2CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="2"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT3CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="3"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT4CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="4"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT5CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="5"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT6CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="6"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT7CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="7"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT8CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="8"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT9CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="9"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT10CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="10"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT11CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="11"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT12CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="12"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT13CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="13"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT14CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="14"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+    <CRequirementGT id="GT15CountUpgradeCommanderLevelCompleteOnly">
+        <OperandArray index="0" value="15"/>
+        <OperandArray index="1" value="CountUpgradeCommanderLevelCompleteOnly"/>
+    </CRequirementGT>
+</Catalog>

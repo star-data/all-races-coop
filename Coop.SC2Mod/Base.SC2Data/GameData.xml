@@ -19,6 +19,8 @@
     <Catalog path="harvester.xml"/>
     <Catalog path="DummyData.xml"/>
     <Catalog path="droppods.xml"/>
+<!--    Part and parcel? but also Oblivion express-->
+    <Catalog path="hybridRelease.xml"/>
     <Catalog path="HybridsData/AbilData.xml"/>
     <Catalog path="HybridsData/ActorData.xml"/>
     <Catalog path="HybridsData/BehaviorData.xml"/>

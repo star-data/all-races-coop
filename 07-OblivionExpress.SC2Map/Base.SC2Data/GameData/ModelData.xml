@@ -1,0 +1,9 @@
+<Catalog>
+
+    <CModel id="HillPortrait" parent="Portrait" Race="Terran">
+        <RequiredAnims value="Assets\Portraits\Terran\HillPortrait_RequiredAnims\HillPortrait_RequiredAnims.m3a"/>
+        <Flags index="Facial" value="1"/>
+        <Flags index="Download" value="1"/>
+        <FacialController value="LocalizedData\Facial\SM_Mercenary03.fxa"/>
+    </CModel>
+</Catalog>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Catalog>
+    <CObjective default="1" id="AC_DefaultObjective">
+      <UserReference value="MissionObjective;##id##"/>
+    </CObjective>
+</Catalog>

@@ -1,0 +1,1186 @@
+<Catalog>
+
+
+    <CActorSound id="UI_ResourcePickup" parent="SoundOneShot">
+        <On Terms="Abil.PickupGas100.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.PickupMinerals100.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.PickupGas25.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.PickupGas50.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.PickupGas200.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.PickupMinerals250.SourceCastStart" Send="Create"/>
+        <On Terms="Abil.PickupLoreItem.SourceCastStart" Send="Create"/>
+    </CActorSound>
+
+    <CButton id="Pickup">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupGas100">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupMinerals100">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupMinerals25">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupMinerals50">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupGas50">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupScrapSmall">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupScrapMedium">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupScrapLarge">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupPalletGas">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="PickupPalletMinerals">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+
+
+    <CActorUnit id="GasCanister" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanister">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\icon-gas.dds"/>
+        <HeroIcon value="Assets\Textures\icon-gas.dds"/>
+        <InfoText value="Unit/InfoText/GasCanister"/>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PalletGas" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PalletGas">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-gaspallet.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-gaspallet.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-gaspallet.dds"/>
+        </Wireframe>
+        <InfoText value="Unit/InfoText/PalletGas"/>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorModel id="GasCanisterGlow" parent="ModelAddition">
+        <On Terms="ActorCreation" Send="SetTintColor 50,255,0"/>
+    </CActorModel>
+    <CActorUnit id="GasCanisterProtoss" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterProtoss">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\wireframe-general-gascube.dds"/>
+        <HeroIcon value="Assets\Textures\wireframe-general-gascube.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterProtoss"/>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+        <Model value="GasCanisterEX2Protoss100"/>
+        <BuildModel value="GasCanisterEX2Protoss100"/>
+        <PlacementModel value="GasCanisterEX2Protoss100"/>
+        <DeathArray index="Normal" ModelLink="GasCanisterEX2Protoss100"/>
+    </CActorUnit>
+    <CActorUnit id="GasCanisterZerg" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterZerg">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\icon-gas.dds"/>
+        <HeroIcon value="Assets\Textures\icon-gas.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterZerg"/>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorSite id="FloatingTextSite">
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <On Terms="ActorCreation" Send="RefClear ::Host"/>
+    </CActorSite>
+    <CActorModel id="FloatingTextGas100" parent="FloatingTextActorDefault" effectPickup="PickupGas100" actorCreate="PickupGas100Text"/>
+    <CActorModel id="FloatingTextMinerals100" parent="FloatingTextActorDefault" effectPickup="PickupMinerals100" actorCreate="PickupMinerals100Text"/>
+    <CActorModel id="FloatingTextHeath25" parent="FloatingTextActorDefault" effectPickup="PickupHealth25" actorCreate="PickupHealth25Text"/>
+    <CActorModel id="FloatingTextHeath50" parent="FloatingTextActorDefault" effectPickup="PickupHealth50" actorCreate="PickupHealth50Text"/>
+    <CActorModel id="FloatingTextHeath100" parent="FloatingTextActorDefault" effectPickup="PickupHealth100" actorCreate="PickupHealth100Text"/>
+    <CActorModel id="FloatingTextHeathFull" parent="FloatingTextActorDefault" effectPickup="PickupHealthFull" actorCreate="PickupHealthFullText"/>
+    <CActorModel id="FloatingTextEnergy25" parent="FloatingTextActorDefault" effectPickup="PickupEnergy25" actorCreate="PickupEnergy25Text"/>
+    <CActorModel id="FloatingTextEnergy50" parent="FloatingTextActorDefault" effectPickup="PickupEnergy50" actorCreate="PickupEnergy50Text"/>
+    <CActorModel id="FloatingTextEnergy100" parent="FloatingTextActorDefault" effectPickup="PickupEnergy100" actorCreate="PickupEnergy100Text"/>
+    <CActorModel id="FloatingTextEnergyFull" parent="FloatingTextActorDefault" effectPickup="PickupEnergyFull" actorCreate="PickupEnergyFullText"/>
+    <CActorText id="PickupMinerals100Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupGas100Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupHealth25Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupHealth50Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupHealth100Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupHealthFullText" parent="PickupTextDefault"/>
+    <CActorText id="PickupEnergy25Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupEnergy50Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupEnergy100Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupEnergyFullText" parent="PickupTextDefault"/>
+
+
+    <CUnit id="PickupMineralsAir">
+        <AbilArray Link="PickupMineralsAir100"/>
+        <BehaviorArray Link="Unturnable"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
+    </CUnit>
+    <CActorUnit id="PickupMineralsAir" parent="DestructibleUnitStandard" unitName="PickupMineralsAir">
+        <Macros value="AntiGravDeathRemoveMacro"/>
+        <DeathArray index="Normal" SoundLink="Doodad_SJMineralDeposit_Death" VoiceLink=""/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-General-SpaceMineralClusterSmall.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\Textures\Wireframe-General-SpaceMineralClusterSmall.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-General-SpaceMineralClusterSmall.dds"/>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-General-SpaceMineralClusterSmall.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CAbilEffectTarget id="PickupMinerals100Air">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="VoidPickupMinerals100Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupMinerals100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CModel id="PickupMineralsAir" parent="ImpactFX">
+        <Model value="Assets\Doodads\SpaceMineralClusterSmall_EX2\SpaceMineralClusterSmall_EX2.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <VariationCount value="4"/>
+        <SelectionRadius value="0.75"/>
+    </CModel>
+    <CAbilEffectTarget id="PickupGas100Air">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="VoidPickupGas100Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupGas100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+
+    <CAbilEffectTarget id="Pickup">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value=""/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Pickup"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupArcade">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Effect index="0" value=""/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Pickup"/>
+        <Range value="1.5"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.1"/>
+        </Cost>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupGas100">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupGas100Set"/>
+        <Effect index="0" value="VoidPickupGas100Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupGas100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupMinerals100">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupMinerals100Set"/>
+        <Effect index="0" value="VoidPickupMinerals100Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupMinerals100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupHealth25">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupHealth25Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupHealth25"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupHealth50">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupHealth50Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupHealth50"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupHealth100">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupHealth100Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupHealth100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupHealthFull">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupHealthFullSet"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupHealthFull"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupEnergy25">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupEnergy25Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupEnergy25"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupEnergy50">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupEnergy50Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupEnergy50"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupEnergy100">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupEnergy100Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupEnergy100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupEnergyFull">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupEnergyFullSet"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupEnergyFull"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupGas25">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupGas25Set"/>
+        <Effect index="0" value="VoidPickupGas25Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupGas100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupGas200">
+        <Effect index="0" value="VoidPickupGas200Set"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <Range value="1"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastRange value="1"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <FinishTime value="3"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupGas100"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="PickupMinerals250">
+        <Effect index="0" value="PickupMinerals250Set"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <Range value="1"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastRange value="1"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <FinishTime value="3"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupMinerals100"/>
+    </CAbilEffectTarget>
+    <CActorUnit id="PickupHealth25" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupHealth25">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupHealth50" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupHealth50">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupHealth100" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupHealth100">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupHealthFull" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupHealthFull">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupEnergy25" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupEnergy25">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupEnergy50" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupEnergy50">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupEnergy100" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupEnergy100">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupEnergyFull" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupEnergyFull">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupPsiStorm" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupPsiStorm">
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmedicrecharge.dds"/>
+        </Wireframe>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CActorUnit id="PickupManaRecharge" parent="GenericUnitStandardNoAutoSoundLinks" unitName="PickupManaRecharge">
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-pickupmanarecharge.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorModel id="FloatingTextHeath500" parent="FloatingTextActorDefault" effectPickup="PickupHealth500" actorCreate="PickupHealth500Text"/>
+    <CActorText id="PickupHealth500Text" parent="PickupTextDefault"/>
+    <CActorModel id="FloatingTextGas50" parent="FloatingTextActorDefault" effectPickup="PickupGas50" actorCreate="PickupGas50Text">
+        <On Terms="Effect.MutatorPickupGas50.Start" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="FloatingTextGas25" parent="FloatingTextActorDefault" effectPickup="PickupGas25" actorCreate="PickupGas25Text"/>
+    <CActorText id="PickupGas50Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupGas25Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupMinerals25Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupMinerals50Text" parent="PickupTextDefault"/>
+    <CActorModel id="FloatingTextMinerals25" parent="FloatingTextActorDefault" effectPickup="PickupMinerals25" actorCreate="PickupMinerals25Text"/>
+    <CActorModel id="FloatingTextMinerals50" parent="FloatingTextActorDefault" effectPickup="PickupMinerals50" actorCreate="PickupMinerals50Text"/>
+    <CActorModel id="FloatingTextEnvelopeMinerals50" parent="FloatingTextActorDefault" effectPickup="PickupEnvelopeMinerals50" actorCreate="PickupEnvelopeMinerals50Text"/>
+    <CActorModel id="FloatingTextEnvelopeGas50" parent="FloatingTextActorDefault" effectPickup="PickupEnvelopeGas50" actorCreate="PickupEnvelopeGas50Text"/>
+    <CActorText id="PickupEnvelopeMinerals50Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupEnvelopeGas50Text" parent="PickupTextDefault"/>
+
+    <CActorUnit id="GasCanisterEX2Protoss100" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterEX2Protoss100">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <HeroIcon value="Assets\Textures\icon-gas.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\icon-gas.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterEX2Protoss100"/>
+    </CActorUnit>
+    <CActorUnit id="GasCanisterEX2Protoss25" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterEX2Protoss25">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <HeroIcon value="Assets\Textures\icon-gas.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\icon-gas.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterEX2Protoss25"/>
+    </CActorUnit>
+    <CActorUnit id="GasCanisterEX2Protoss50" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterEX2Protoss50">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <HeroIcon value="Assets\Textures\icon-gas.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\icon-gas.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterEX2Protoss50"/>
+    </CActorUnit>
+    <CActorUnit id="GasCanisterEX2Protoss200" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterEX2Protoss200">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <HeroIcon value="Assets\Textures\icon-gas.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\icon-gas.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterEX2Protoss200"/>
+    </CActorUnit>
+    <CActorText id="PickupGasProtoss25Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupGasProtoss50Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupGasProtoss100Text" parent="PickupTextDefault"/>
+    <CActorText id="PickupGasProtoss200Text" parent="PickupTextDefault"/>
+    <CActorModel id="FloatingTextEX2Gas25" parent="FloatingTextActorDefault" effectPickup="PickupEX2Gas25" actorCreate="PickupGasProtoss25Text"/>
+    <CActorModel id="FloatingTextEX2Gas50" parent="FloatingTextActorDefault" effectPickup="PickupEX2Gas50" actorCreate="PickupGasProtoss50Text"/>
+    <CActorModel id="FloatingTextEX2Gas100" parent="FloatingTextActorDefault" effectPickup="PickupEX2Gas100" actorCreate="PickupGasProtoss100Text"/>
+    <CActorModel id="FloatingTextEX2Gas200" parent="FloatingTextActorDefault" effectPickup="PickupEX2Gas200" actorCreate="PickupGasProtoss200Text"/>
+
+    <CActorModel id="FloatingTextGas200" parent="FloatingTextActorDefault" effectPickup="PickupGas200" actorCreate="PickupGas200Text"/>
+    <CActorText id="PickupGas200Text" parent="PickupTextDefault"/>
+    <CActorUnit id="GasCanisterLargeProtoss" parent="GenericUnitStandardNoAutoSoundLinks" unitName="GasCanisterLargeProtoss">
+        <On Terms="ActorCreation" Send="Create GasCanisterGlow"/>
+        <Model value="GasCanisterEX2Protoss200"/>
+        <BuildModel value="GasCanisterEX2Protoss200"/>
+        <PlacementModel value="GasCanisterEX2Protoss200"/>
+        <HeroIcon value="Assets\Textures\wireframe-general-gascube.dds"/>
+        <InfoText value="Unit/InfoText/GasCanisterLargeProtoss"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <UnitIcon value="Assets\Textures\wireframe-general-gascube.dds"/>
+        <DeathArray index="Normal" ModelLink="GasCanisterEX2Protoss200"/>
+    </CActorUnit>
+    <CActorModel id="FloatingTextMinerals250" parent="FloatingTextActorDefault" effectPickup="PickupMinerals250" actorCreate="PickupMinerals250Text"/>
+    <CActorText id="PickupMinerals250Text" parent="PickupTextDefault"/>
+    <CActorUnit id="LargePalletMinerals" parent="GenericUnitStandardNoAutoSoundLinks" unitName="LargePalletMinerals">
+        <Model value="PalletMinerals"/>
+        <On Terms="ActorCreation" Send="Create MineralCrystalGlow"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <InfoText value="Unit/InfoText/LargePalletMinerals"/>
+        <UnitIcon value="Assets\Textures\Wireframe-general-mineralpallet.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-general-mineralpallet.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-general-mineralpallet.dds"/>
+        </Wireframe>
+        <Scale value="1.500000"/>
+        <Macros value="AntiGravDeathRemoveMacro"/>
+    </CActorUnit>
+    <CEffectCreatePersistent id="PickupRemoveDelay">
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="0.1"/>
+        <PeriodicEffectArray value="PickupRemove"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="PickupRemove">
+        <EditorCategories value=""/>
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoKillCredit" value="1"/>
+        <Death value="Remove"/>
+    </CEffectDamage>
+    <CEffectSet id="PickupGas100Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupGas100"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupGas100">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="100"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupMinerals100Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupMinerals100"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupMinerals100">
+        <EditorCategories value=""/>
+        <Resources index="Minerals" value="100"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupHealth25Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupHealth25"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupHealth25">
+        <EditorCategories value=""/>
+        <VitalArray index="Life">
+            <Change value="25"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupHealth50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupHealth50"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupHealth50">
+        <EditorCategories value=""/>
+        <VitalArray index="Life">
+            <Change value="50"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupHealth100Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupHealth100"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupHealth100">
+        <EditorCategories value=""/>
+        <VitalArray index="Life">
+            <Change value="100"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupHealthFullSet">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupHealthFull"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupHealthFull">
+        <EditorCategories value=""/>
+        <VitalArray index="Life">
+            <ChangeFraction value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupEnergy25Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEnergy25"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupEnergy25">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy">
+            <Change value="25"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupEnergy50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEnergy50"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupEnergy50">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy">
+            <Change value="50"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupEnergy100Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEnergy100"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupEnergy100">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy">
+            <Change value="100"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupEnergyFullSet">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEnergyFull"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="PickupEnergyFull">
+        <EditorCategories value=""/>
+        <VitalArray index="Energy">
+            <ChangeFraction value="1"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="PickupHealth500">
+        <EditorCategories value=""/>
+        <VitalArray index="Life">
+            <Change value="500"/>
+        </VitalArray>
+    </CEffectModifyUnit>
+    <CEffectSet id="PickupGas50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupGas50"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupGas50">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="50"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupGas25Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupGas25"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupGas25">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="25"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="PickupGas200">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="200"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupGas200Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEX2Gas200"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupMinerals250">
+        <EditorCategories value=""/>
+        <Resources index="Minerals" value="250"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupMinerals250Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupMinerals250"/>
+        <EffectArray value="PickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupEX2Gas25">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="25"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="PickupEX2Gas50">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="50"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="PickupEX2Gas100">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="100"/>
+    </CEffectModifyPlayer>
+    <CEffectModifyPlayer id="PickupEX2Gas200">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="200"/>
+    </CEffectModifyPlayer>
+    <CEffectCreatePersistent id="PickupRemoveDelayDeath">
+        <PeriodCount value="1"/>
+        <PeriodicPeriodArray value="0.1"/>
+        <PeriodicEffectArray value="PickupRemoveDeath"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="PickupRemoveDeath">
+        <EditorCategories value=""/>
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoKillCredit" value="1"/>
+    </CEffectDamage>
+    <CEffectSet id="PickupMinerals25Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupMinerals25"/>
+        <EffectArray value="VoidPickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupMinerals25">
+        <EditorCategories value=""/>
+        <Resources index="Minerals" value="25"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupMinerals50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupMinerals50"/>
+        <EffectArray value="VoidPickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupMinerals50">
+        <EditorCategories value=""/>
+        <Resources index="Minerals" value="50"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupEnvelopeMinerals50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEnvelopeMinerals50"/>
+        <EffectArray value="VoidPickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupEnvelopeMinerals50">
+        <EditorCategories value=""/>
+        <Resources index="Minerals" value="50"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="PickupEnvelopeGas50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="PickupEnvelopeGas50"/>
+        <EffectArray value="VoidPickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="PickupEnvelopeGas50">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="50"/>
+    </CEffectModifyPlayer>
+    <CEffectSet id="MutatorPickupGas50Set">
+        <EditorCategories value=""/>
+        <EffectArray value="MutatorPickupGas50"/>
+        <EffectArray value="VoidPickupRemoveDelay"/>
+    </CEffectSet>
+    <CEffectModifyPlayer id="MutatorPickupGas50">
+        <EditorCategories value=""/>
+        <Resources index="Vespene" value="50"/>
+    </CEffectModifyPlayer>
+    <CModel id="PickupManaRecharge" parent="Unit" Race="Terran">
+        <Model value="Assets\Doodads\PickupManaRecharge\PickupManaRecharge.m3"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+    </CModel>
+    <CModel id="PickupHealth25">
+        <Model value="Assets\Doodads\PickupMedicRecharge\PickupMedicRecharge.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <EditorCategories value="Race:Neutral"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupHealth50">
+        <Model value="Assets\Doodads\PickupMedicRecharge\PickupMedicRecharge.m3"/>
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupHealth100">
+        <Model value="Assets\Doodads\PickupMedicRecharge\PickupMedicRecharge.m3"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupHealthFull">
+        <Model value="Assets\Doodads\PickupMedicRecharge\PickupMedicRecharge.m3"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupEnergy25">
+        <Model value="Assets\Doodads\PickupManaRecharge\PickupManaRecharge.m3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <EditorCategories value="Race:Neutral"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupEnergy50">
+        <Model value="Assets\Doodads\PickupManaRecharge\PickupManaRecharge.m3"/>
+        <ScaleMax value="0.700000,0.700000,0.700000"/>
+        <ScaleMin value="0.700000,0.700000,0.700000"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupEnergy100">
+        <Model value="Assets\Doodads\PickupManaRecharge\PickupManaRecharge.m3"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+    <CModel id="PickupEnergyFull">
+        <Model value="Assets\Doodads\PickupManaRecharge\PickupManaRecharge.m3"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionOffset value="0.000000,0.000000,0.100000"/>
+        <SelectionLayer value="100"/>
+        <Flags index="AutoUnload" value="1"/>
+    </CModel>
+
+    <CValidatorCombine id="PickupCheckCoop">
+        <Type value="And"/>
+        <!--        <CombineArray value="NotSpiderMine"/>-->
+        <!--        <CombineArray value="NotSpiderMineBurrowed"/>-->
+        <CombineArray value="NotHiddenSelf"/>
+    </CValidatorCombine>
+    <CAbilEffectTarget id="PickupGas50">
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Effect index="0" value="PickupGas50Set"/>
+        <Effect index="0" value="VoidPickupGas50Set"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PickupGas100"/>
+        <Range value="1"/>
+        <AutoCastRange value="1"/>
+        <AutoCastFilters value="Ground;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable,Benign"/>
+        <AutoCastValidatorArray value="PickupCheck"/>
+        <Cost>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <FinishTime value="3"/>
+        <Arc value="360"/>
+    </CAbilEffectTarget>
+
+    <!--
+
+
+
+
+    Abil/Name/Pickup=Pickup
+    Abil/Name/PickupArcade=Pickup (Arcade)
+    Abil/Name/PickupEnergy100=Pickup Energy100
+    Abil/Name/PickupEnergy25=Pickup Energy25
+    Abil/Name/PickupEnergy50=Pickup Energy50
+    Abil/Name/PickupEnergyFull=Pickup Energy Full
+    Abil/Name/PickupGas10=Pickup Gas10
+    Abil/Name/PickupGas100=Pickup Gas100 Air & Ground
+    Abil/Name/PickupGas100Air=Pickup Gas100 Air
+    Abil/Name/PickupGas200=Pickup Gas200 Air & Ground
+    Abil/Name/PickupGas25=Pickup Gas25
+    Abil/Name/PickupGas50=Pickup Gas50
+    Abil/Name/PickupHealth100=Pickup Health100
+    Abil/Name/PickupHealth25=Pickup Health25
+    Abil/Name/PickupHealth50=Pickup Health50
+    Abil/Name/PickupHealthFull=Pickup Health Full
+    Abil/Name/PickupMinerals100=Pickup Minerals100
+    Abil/Name/PickupMinerals100Air=Pickup Minerals100 Air & Ground
+    Abil/Name/PickupMinerals250=Pickup Minerals250
+    Abil/Name/PickupMineralsAir100=Pickup Minerals Air 100
+    Button/Name/Pickup=Collect
+    Button/Name/PickupGas100=Collect (+100 Vespene Gas)
+    Button/Name/PickupMinerals100=Collect (+100 Minerals)
+    Button/Tooltip/Pickup=This item can be collected.
+    Button/Tooltip/PickupBeastPart=
+    Button/Tooltip/PickupChronoRiftCharge=Ancient Xel'Naga information repository.
+    Button/Tooltip/PickupChronoRiftChargeSwarm=Observation device of Xel'Naga origin. Contains a millennia worth of Primal Zerg genetic information.
+    Button/Tooltip/PickupChronoRiftDevice=Experimental space/time manipulator. Grants the ability to slow units in a target area.
+    Button/Tooltip/PickupEnergy100Text=<s val="Kicker_Energy">+100 Energy</s>
+    Button/Tooltip/PickupEnergy25Text=<s val="Kicker_Energy">+25 Energy</s>
+    Button/Tooltip/PickupEnergy50Text=<s val="Kicker_Energy">+50 Energy</s>
+    Button/Tooltip/PickupEnergyFullText=<s val="Kicker_Energy">Full Energy</s>
+    Button/Tooltip/PickupGas10=This item can be collected.
+    Button/Tooltip/PickupGas100=This item can be collected.
+    Button/Tooltip/PickupGas100Text=<s val="Kicker_Gas">+100 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGas10Text=<s val="Kicker_Gas">+10 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGas200Text=<s val="Kicker_Gas">+200 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGas25=This item can be collected.
+    Button/Tooltip/PickupGas25Text=<s val="Kicker_Gas">+25 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGas50=This item can be collected.
+    Button/Tooltip/PickupGas50Text=<s val="Kicker_Gas">+50 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGasProtoss100Text=<s val="Kicker_Gas">+100 </s><IMG path="Assets\Textures\icon-gas-protoss.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGasProtoss200Text=<s val="Kicker_Gas">+200 </s><IMG path="Assets\Textures\icon-gas-protoss.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGasProtoss25Text=<s val="Kicker_Gas">+25 </s><IMG path="Assets\Textures\icon-gas-protoss.dds" height="28" width="28"/>
+    Button/Tooltip/PickupGasProtoss50Text=<s val="Kicker_Gas">+50 </s><IMG path="Assets\Textures\icon-gas-protoss.dds" height="28" width="28"/>
+    Button/Tooltip/PickupHealth100Text=<s val="Kicker_Health">+100 Life</s>
+    Button/Tooltip/PickupHealth25Text=<s val="Kicker_Health">+25 Life</s>
+    Button/Tooltip/PickupHealth500Text=<s val="Kicker_Health">+500 life</s>.
+    Button/Tooltip/PickupHealth50Text=<s val="Kicker_Health">+50 Life</s>
+    Button/Tooltip/PickupHealthFullText=<s val="Kicker_Health">Full Life</s>
+    Button/Tooltip/PickupManaRecharge=Reactor charging station. Replenishes energy of all nearby friendly units.
+    Button/Tooltip/PickupMedicRecharge=Emergency first aid station. Heals all nearby friendly units.
+    Button/Tooltip/PickupMinerals100=This item can be collected.
+    Button/Tooltip/PickupMinerals100Text=<s val="Kicker_Minerals">+100 </s><IMG path="Assets\Textures\icon-mineral-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupMinerals250Text=<s val="Kicker_Minerals">+250 </s><IMG path="Assets\Textures\icon-mineral-terran.dds" height="28" width="28"/>
+    Button/Tooltip/PickupRestorationCharge=Restores life and energy to all nearby friendly units.
+    Effect/Name/PickupEX2Gas100=Pickup EX2 Gas 100
+    Effect/Name/PickupEX2Gas200=Pickup EX2 Gas 200
+    Effect/Name/PickupEX2Gas25=Pickup EX2 Gas 25
+    Effect/Name/PickupEX2Gas50=Pickup EX2 Gas 50
+    Effect/Name/PickupGas200=Pickup Gas200
+    Effect/Name/PickupGas200Set=Pickup Gas200 Set
+    Unit/Name/PickupEnergy100=Energy +100
+    Unit/Name/PickupEnergy25=Energy +25
+    Unit/Name/PickupEnergy50=Energy +50
+    Unit/Name/PickupEnergyFull=Restore all energy
+    Unit/Name/PickupHealth100=Life +100
+    Unit/Name/PickupHealth25=Life +25
+    Unit/Name/PickupHealth50=Life +50
+    Unit/Name/PickupHealthFull=Restore full health
+    Unit/Name/PickupManaRecharge=Energy Recharge
+    Unit/Name/PickupMedicRecharge=Medkit
+    Unit/Name/PickupMineralsAir=Minerals
+    Unit/Name/PickupRestorationCharge=Restoration Charge
+
+    -->
+
+
+
+
+
+
+</Catalog>

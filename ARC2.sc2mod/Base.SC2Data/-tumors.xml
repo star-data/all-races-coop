@@ -1,0 +1,142 @@
+<Catalog>
+
+    <!--    Tumors-->
+    <CUnit id="CreepTumorUsed">
+        <DeathRevealRadius value="3"/>
+        <Race value="Zerg"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="CreepTumor" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <LifeRegenRate value="0.2734"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergBuildingArmor"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="11"/>
+        <AttackTargetPriority value="19"/>
+        <BehaviorArray Link="makeCreep4x4"/>
+        <BehaviorArray Link="QueenofVenomCreepTumorSearch"/>
+        <BehaviorArray Link="makeCreep4x4Enhanced"/>
+        <BehaviorArray Link="CreepFrenzy13CreepTumor"/>
+        <BehaviorArray Link="CommanderPrestigeKerriganCreepGrowth"/>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.5"/>
+        <Footprint value="CreepTumorBurrowed"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
+        <TacticalAIThink value="AIThinkCreepTumor"/>
+        <AIEvalFactor value="0"/>
+        <SelectAlias value="CreepTumor"/>
+        <GlossaryPriority value="10"/>
+        <CardLayouts>
+            <LayoutButtons Face="CreepTumorPassive" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="K5CreepBonuses" Type="Passive" Requirements="HaveK5CreepBonuses" Row="1" Column="1"/>
+        </CardLayouts>
+        <Description value="Button/Tooltip/CreepTumorBurrowed"/>
+        <AbilArray Link="CreepTumorBuild"/>
+    </CUnit>
+    <CActorUnit id="CreepTumorUsed" parent="GenericUnitStandard" unitName="CreepTumorUsed">
+        <Model value="CreepTumor"/>
+        <On Terms="ActorCreation" Send="AnimPlay Spell Cover,Spell PlayForever,NonLooping -1.000000 -1.000000 15.000000 AsDuration"/>
+        <DeathActorModel value="UnitDeathModelUnscaled"/>
+        <DeathArray index="Normal" ModelLink="CreepTumorDeath" SoundLink="CreepTumor_Explode"/>
+        <PortraitModel value="ZergBuildingEx2_Portrait"/>
+        <PlacementActorModel value="ZergPlacementModel"/>
+        <PlaceholderActorModel value="ZergPlacementModel"/>
+        <PlacementSound value="Zerg_BuildingPlacementSmall"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <BarWidth value="40"/>
+        <BarOffset value="20"/>
+        <UnitIcon value="Assets\Textures\btn-building-zerg-creeptumor.dds"/>
+        <HeroIcon value="Assets\Textures\btn-building-zerg-creeptumor.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Zerg-CreepTumor.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Zerg-CreepTumor.dds"/>
+        </Wireframe>
+        <SoundArray index="Ready" value="CreepTumor_What"/>
+        <SoundArray index="Construction" value="Zerg_BuildingMorphWhat"/>
+        <LifeArmorIcon value="Assets\Textures\btn-armor-zerg-building.dds"/>
+    </CActorUnit>
+
+    <!--CUnit id="CreepTumor">
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="RoachBurrow" value="0"/>
+        <Collide index="ForceField" value="0"/>
+        <Collide index="Small" value="0"/>
+        <BehaviorArray Link="makeCreep4x4Enhanced"/>
+        <AbilArray Link="CreepTumorUsed"/>
+        <CardLayouts>
+            <LayoutButtons Face="CreepTumorPassive" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+    </CUnit>
+    <CEffectApplyBehavior id="CreepTumorExhausted">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectIssueOrder id="CreepTumorUsed">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichUnit Value="Source"/>
+        <Player Value="Source"/>
+        <Abil value="CreepTumorUsed"/>
+    </CEffectIssueOrder>
+    <CBehaviorBuff id="CreepTumorExhausted">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <InitialEffect value="CreepTumorUsed"/>
+    </CBehaviorBuff-->
+
+    <!--CUnit id="CreepTumorBurrowed">
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <BehaviorArray Link="QueenofVenomCreepTumorSearch"/>
+        <BehaviorArray Link="makeCreep4x4Enhanced"/>
+        <BehaviorArray Link="CreepFrenzy13CreepTumor"/>
+        <BehaviorArray Link="CreepTumorHidden"/>
+        <BehaviorArray Link="CreepTumorVisible"/>
+        <BehaviorArray Link="CommanderPrestigeKerriganCreepGrowth"/>
+        <AbilArray Link="CreepTumorUsed"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="CreepTumorPassive" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="K5CreepBonuses" Type="Passive" Requirements="HaveK5CreepBonuses" Row="1" Column="1"/>
+        </CardLayouts>
+        <CardLayouts index="0">
+            <LayoutButtons Face="ZagaraVoidCoopCreepMaster" Type="AbilCmd" AbilCmd="CreepTumorBuild,Build2" Row="2" Column="0"/>
+        </CardLayouts>
+    </CUnit-->
+    <CActorStateMonitor id="ZergBloodSmallBuilding">
+        <On Terms="UnitCreation.CreepTumorUsed" Send="Create"/>
+    </CActorStateMonitor>
+    <CAbilMorph id="CreepTumorUsed">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:MorphsandBurrows"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CreepTumor"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="WaitUntilStopped" value="0"/>
+        <InfoArray Unit="CreepTumorUsed" index="0"/>
+    </CAbilMorph>
+</Catalog>

@@ -1,0 +1,72 @@
+<Catalog>
+
+
+    <CEffectSet id="RefreshSharedUpgrades"/>
+    <CEffectEnumMagazine id="TriggerCopyBehaviorToMagazine">
+        <EffectInternal value="TriggerCopyBehaviorToTarget"/>
+        <EffectExternal value="TriggerCopyBehaviorToTarget"/>
+    </CEffectEnumMagazine>
+    <CEffectTransferBehavior id="TriggerCopyBehaviorToTarget">
+        <LaunchUnit Value="Caster"/>
+        <ImpactUnit Value="Target"/>
+        <Copy value="1"/>
+        <Preserve value="1"/>
+    </CEffectTransferBehavior>
+    <CEffectEnumMagazine id="TriggerInheritRateIterateMagazine">
+        <EditorCategories value=""/>
+        <EffectInternal value="TriggerInheritRateDummy"/>
+        <EffectExternal value="TriggerInheritRateDummy"/>
+    </CEffectEnumMagazine>
+    <CEffectSet id="TriggerInheritRateDummy">
+        <EditorCategories value=""/>
+        <EffectArray value="TriggerQueueableRateRB"/>
+        <EffectArray value="TriggerQueueableRateAB"/>
+    </CEffectSet>
+    <CEffectSet id="CoopCargoDeathDummy"/>
+    <CEffectDamage id="CoopCargoDeathKill">
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoScaledDealtBonus" value="1"/>
+        <Flags index="NoFractionDealtBonus" value="1"/>
+        <Flags index="NoUnscaledDealtBonus" value="1"/>
+        <Flags index="NoBehaviorResponse" value="1"/>
+    </CEffectDamage>
+    <CEffectModifyUnit id="GrantKillCreditDummy">
+        <EditorCategories value=""/>
+    </CEffectModifyUnit>
+    <CEffectSet id="PortToMyCenter"/>
+    <CEffectRedirectMissile id="RedirectPlacementLaunchTarget">
+        <ValidatorArray value="RedirectPlacementLaunchTargetTargetFilters"/>
+        <EditorCategories value=""/>
+        <WhichUnit Value="Source"/>
+        <ImpactFilters value="-;Stasis,Dead,Hidden,Invulnerable"/>
+        <Movers Link="MissileDefault"/>
+    </CEffectRedirectMissile>
+    <CEffectCreateUnit id="RedirectStart">
+        <EditorCategories value=""/>
+        <Origin Value="TargetUnit"/>
+        <CreateFlags index="Birth" value="0"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="OffsetByRadius" value="0"/>
+        <CreateFlags index="PlacementIgnoreBlockers" value="1"/>
+        <CreateFlags index="ProvideFood" value="0"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <CreateFlags index="UseFood" value="0"/>
+        <CreateFlags index="NormalizeSpawnOffset" value="0"/>
+        <SpawnOwner Value="Target"/>
+        <SpawnRange value="10"/>
+        <SpawnEffect value="RedirectPlacementLaunchTarget"/>
+    </CEffectCreateUnit>
+    <CEffectRemoveBehavior id="RemoveAllDot">
+        <BehaviorCategories index="User15" value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="RemoveAllStun">
+        <BehaviorCategories index="Stun" value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="RemoveAllSlow">
+        <BehaviorCategories index="Slow" value="1"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="HeroInstantRevive"/>
+
+
+
+</Catalog>

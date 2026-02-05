@@ -1,0 +1,192 @@
+<Catalog>
+
+    <CAbilEffectTarget id="HybridRelease">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <PrepTime value="3"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HybridRelease"/>
+    </CAbilEffectTarget>
+    <CAbilEffectTarget id="HybridReleaseFallback">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Effect index="0" value="HybridRelease"/>
+        <Flags index="AllowMovement" value="1"/>
+        <Flags index="NoDeceleration" value="1"/>
+        <Flags index="ReExecutable" value="1"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Range value="500"/>
+        <Arc value="360"/>
+        <UninterruptibleArray index="Prep" value="1"/>
+        <UninterruptibleArray index="Cast" value="1"/>
+        <UninterruptibleArray index="Channel" value="1"/>
+        <UninterruptibleArray index="Finish" value="1"/>
+        <PrepTime value="0"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="HybridRelease"/>
+    </CAbilEffectTarget>
+    <CActorUnit id="HybridHoldingCellSmallUnit" parent="GenericUnitBase" unitName="HybridHoldingCellSmallUnit">
+        <PortraitModel value="AdjutantPortrait"/>
+        <BarWidth value="200"/>
+        <BarOffset value="240"/>
+        <On Terms="ActorCreation" Send="Create SoundEmitter Doodad_HybridHoldingCell"/>
+        <On Terms="ActorCreation" Send="Create HybridReleaseAddition"/>
+        <On Terms="Abil.HybridRelease.SourcePrepStart" Send="AnimBracketStart Work Stand,Work,Start Stand,Work Stand,Work,End"/>
+        <On Terms="Abil.HybridRelease.SourcePrepStart" Target="HybridReleaseAddition" Send="AnimBaselineStart"/>
+        <On Terms="Abil.HybridRelease.SourceCastStart" Target="HybridReleaseAddition" Send="Destroy"/>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-buildingarmor.dds"/>
+        <DeathArray index="Normal" ModelLink="HybridHoldingCellSmallDeath" SoundLink="Hybrid02_Cell_Explode"/>
+        <DeathActorModel value="UnitDeathModelPersistent"/>
+        <DeathActorModelLow value="UnitDeathModelPersistent"/>
+        <UnitIcon value="Assets\Textures\Wireframe-Terran-HybridHoldingCellSmall.dds"/>
+        <HeroIcon value="Assets\Textures\Wireframe-Terran-HybridHoldingCellSmall.dds"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\Wireframe-Terran-HybridHoldingCellSmall.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\Textures\Wireframe-Terran-HybridHoldingCellSmall.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CButton id="HybridRelease">
+        <Icon value="Assets\Textures\btn-command-move.dds"/>
+        <AlertIcon value="Assets\Textures\btn-command-move.dds"/>
+    </CButton>
+    <CEffectSet id="HybridRelease">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="HybridReleaseLM"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectLaunchMissile id="HybridReleaseLM">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HybridReleaseImpact"/>
+        <AmmoUnit value="HybridReleaseWeapon"/>
+        <Movers Link="HybridRelease"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="HybridReleaseImpact">
+        <EditorCategories value="Race:Zerg"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CActorSiteOpLocalOffset id="HybridReleaseAdditionAttachmentOffset">
+        <LocalOffset value="0.000000,0.000000,3.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorModel id="HybridReleaseAddition">
+        <ModelFlags index="UseSyncSeed" value="1"/>
+        <Aliases value="_Snapshot"/>
+        <Host Subject="_Selectable"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="CreepEngulfment" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <HostSiteOps Ops="SOpShadow HybridReleaseAdditionAttachmentOffset"/>
+        <On Terms="ActorCreation" Send="AnimBaselineStart"/>
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+    </CActorModel>
+    <CActorMissile id="HybridReleaseAttackMissile" parent="GenericAttackMissile" unitName="HybridReleaseWeapon"/>
+    <CActorAction id="HybridReleaseAttack" parent="GenericAttack" effectImpact="HybridReleaseImpact" effectLaunch="HybridReleaseLM">
+        <LaunchSiteOps Ops="SOpShadow HybridReleaseAdditionAttachmentOffset"/>
+        <ImpactMap index="None" Sound=""/>
+    </CActorAction>
+    <CActorUnit id="HybridReleaseFallbackUnit" parent="GenericUnitMinimal" unitName="HybridReleaseFallbackUnit">
+        <Model value="Invisible"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <Macros value="RemoveFlyerHelperMacro"/>
+    </CActorUnit>
+    <CActorSiteOpLocalOffset id="HybridReleaseVoidAdditionAttachmentOffset">
+        <LocalOffset value="0.000000,0.000000,3.000000"/>
+    </CActorSiteOpLocalOffset>
+    <CActorModel id="HybridReleaseVoidAddition">
+        <ModelFlags index="UseSyncSeed" value="1"/>
+        <Aliases value="_Snapshot"/>
+        <Host Subject="_Selectable"/>
+        <Inherits index="CastShadows" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="CreepEngulfment" value="1"/>
+        <Inherits index="Decal" value="1"/>
+        <Inherits index="Opacity" value="1"/>
+        <Inherits index="TeamColor" value="1"/>
+        <Inherits index="TimeScale" value="1"/>
+        <Inherits index="TintColor" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <Inherits index="WarpGroup" value="1"/>
+        <HostSiteOps Ops="SOpShadow HybridReleaseVoidAdditionAttachmentOffset"/>
+        <On Terms="ActorCreation" Send="AnimBaselineStart"/>
+        <On Terms="UnitDeathCustomize" Send="Destroy"/>
+    </CActorModel>
+    <CActorMissile id="HybridReleaseVoidAttackMissile" parent="GenericAttackMissile" unitName="HybridReleaseVoidWeapon"/>
+    <CActorAction id="HybridReleaseVoidAttack" parent="GenericAttack" effectImpact="HybridReleaseVoidImpact" effectLaunch="HybridReleaseVoidLM">
+        <LaunchSiteOps Ops="SOpShadow HybridReleaseVoidAdditionAttachmentOffset"/>
+        <ImpactMap index="None" Sound=""/>
+    </CActorAction>
+    <CEffectLaunchMissile id="HybridReleaseVoidLM">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="HybridReleaseVoidImpact"/>
+        <AmmoUnit value="HybridReleaseVoidWeapon"/>
+        <Movers Link="HybridReleaseVoid"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="HybridReleaseVoidImpact">
+        <EditorCategories value="Race:Zerg"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CModel id="HybridReleaseAddition" parent="PersistentSpellFX">
+        <Model value="Assets\Units\Protoss\HybridUnitMissile\HybridUnitMissile.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="HybridReleaseWeapon" parent="MissileFX">
+        <Model value="Assets\Units\Protoss\HybridUnitMissile\HybridUnitMissile.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="HybridReleaseVoidAddition" parent="PersistentSpellFX">
+        <Model value="Assets\Units\Protoss\Hybrid_ProtossAdvanced\Hybrid_ProtossAdvanced.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CModel id="HybridReleaseVoidWeapon" parent="MissileFX">
+        <Model value="Assets\Units\Protoss\Hybrid_ProtossAdvanced\Hybrid_ProtossAdvanced.m3"/>
+        <Occlusion value="Show"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+    </CModel>
+    <CMoverMissile id="HybridRelease">
+        <MotionPhases Driver="Throw" Acceleration="1" Speed="3" MaxSpeed="12" Outro="2.5,3.5" RotationActorType="Upright" ThrowRotationType="ThrowForward" ThrowVector="0,-1,0" ThrowBandPitch="14.9963,14.9963,14.9963,14.9963"/>
+        <MotionPhases Driver="Guidance" Acceleration="5" MaxSpeed="6" ActorTracking="Actual" Outro="-2.5,-1.5" RotationActorType="Upright" YawPitchRoll="359.2968">
+            <Overlays Scale="1,1"/>
+        </MotionPhases>
+        <MotionPhases RotationActorType="Upright" YawPitchRoll="MAX">
+            <Overlays Scale="0.15,0.15"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="HybridReleaseVoid">
+        <MotionPhases Driver="Throw" Acceleration="1" Speed="3" MaxSpeed="12" Outro="2.5,3.5" RotationActorType="Upright" ThrowRotationType="ThrowForward" ThrowVector="0,-1,0" ThrowBandPitch="14.9963,14.9963,14.9963,14.9963"/>
+        <MotionPhases Driver="Guidance" Acceleration="5" MaxSpeed="6" ActorTracking="Actual" Outro="-2.5,-1.5" RotationActorType="Upright" YawPitchRoll="359.2968">
+            <Overlays Scale="1,1"/>
+        </MotionPhases>
+        <MotionPhases RotationActorType="Upright" YawPitchRoll="MAX">
+            <Overlays Scale="0.15,0.15"/>
+        </MotionPhases>
+    </CMoverMissile>
+</Catalog>
